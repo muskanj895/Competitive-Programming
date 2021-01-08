@@ -19,6 +19,7 @@ Explanation
 If a and b are taken to be 5. Then a xor b = 0
 If a and b are taken to be 6. Then a xor b = 0
 If a is 5 and b is 6. Then a xor b is 3.*/
+// Brute force solution
 #include<iostream>
 using namespace std;
 int main () {
@@ -34,5 +35,32 @@ int main () {
 		}
 	}
 	cout<<max1;
+	return 0;
+}
+//Efficient method
+#include<iostream>
+using namespace std;
+int main () {
+	int m,n;
+	cin>>m>>n;
+	int res=m^n;
+	int k=0;
+	
+	while(res>0)
+	{
+		
+		k++;
+		res>>=1;
+
+	}
+	int p=1;
+	int s=0;
+	while(k--)
+	{
+		s=s+1*p;
+		p=p*2;
+	}
+	cout<<s;
+	//cout<<max1;
 	return 0;
 }
